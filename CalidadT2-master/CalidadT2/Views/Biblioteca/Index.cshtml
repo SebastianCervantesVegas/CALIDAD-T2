@@ -39,11 +39,11 @@
             <td>
                 @if (item.Estado == ESTADO.POR_LEER)
                 {
-                    <a href="/biblioteca/MarcarComoLeyendo?libroId=@item.LibroId">Leyendo</a>
+                        <a href="/biblioteca/MarcarComoLeyendo?libroId=@item.LibroId" id="leyendo">Leyendo</a>
                 }
                 @if (item.Estado == ESTADO.LEYENDO)
                 {
-                    <a href="/biblioteca/MarcarComoTerminado?libroId=@item.LibroId">Terminado</a>
+                        <a href="/biblioteca/MarcarComoTerminado?libroId=@item.LibroId" id="terminado">Terminado</a>
                 }                
             </td>    
             </tr>
