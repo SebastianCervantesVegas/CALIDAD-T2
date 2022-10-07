@@ -1,5 +1,5 @@
-describe('Examen T2', () => {
-    beforeEach('Iniciar sesion', () => {
+describe('Calidad T2', () => {
+    beforeEach('Login', () => {
         cy.visit(Cypress.env('pageUrl'))
         cy.get('#agBiblioteca').click()
         cy.get('#username').type('admin')
@@ -7,7 +7,7 @@ describe('Examen T2', () => {
         cy.get('#login').click()
 
     })
-    it('Agregar y entrar a Biblioteca', () => {
+    it('Agregar Biblioteca', () => {
         cy.visit(Cypress.env('pageUrl'))
         cy.get('#agBiblioteca').click()
         cy.get('#biblioteca').click()
@@ -15,24 +15,12 @@ describe('Examen T2', () => {
         cy.location('pathname').should('eq', '/Biblioteca')
 
     })
-    it('Seleccionar leyendo en la Biblioteca', () => {
+    it('Seleccionar Leyendo', () => {
         cy.visit(Cypress.env('pageUrl') + '/Biblioteca')
         cy.get('#leyendo').click()
     })
-    it('Seleccionar terminado en la Biblioteca', () => {
+    it('Seleccionar Terminado', () => {
         cy.visit(Cypress.env('pageUrl') + '/Biblioteca')
         cy.get('#terminado').click()
     })
 })
-const { defineConfig } = require("cypress");
-
-module.exports = defineConfig({
-    env: {
-        pageUrl: 'https://localhost:44320/'
-    },
-    e2e: {
-        setupNodeEvents(on, config) {
-            // implement node event listeners here
-        },
-    },
-});
